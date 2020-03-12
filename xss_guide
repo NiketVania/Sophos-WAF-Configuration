@@ -1,0 +1,53 @@
+XSS:
+
+practice: http://leettime.net/xsslab1
+	  prompt.ml
+
+1)Search for input parameters
+
+2)Search in search bar, comment section, signup, login etc.
+
+3)If it reflect back to you there may be XSS
+
+4)Try to embed any javascript code there
+
+5)If your js is not reflected and is in form of value to parameter like this,
+<a href="params.php?p=valid&pp=hello">
+try to complete that parameter value and tag like this, 
+<a href="params.php?p=valid&pp="><script>alert("hello")</script>">
+
+6)sometimes point 5) also don't work then try to use mouse event like onmouseover
+'onmouseover=alert(1)'
+
+7)Look for single and double quotes and try to complete them and then apply onmouseover event in some cases.
+
+8)whenever your input reflect as plain text you should use svg vectors like this,
+<svg/onload=alert(1);
+#you can use html encoding like this to execute specific character, ( => &#40 
+
+9)if they take url as input field you can try to inject payload through file, for that create a file and write <script>alert(1)</script>. If it successfully executed it will be remote file xss or rxss.
+
+10)if your payload is converted into type="text", = and other tags are being filtered you can give like this,
+hi"type=image src onerror
+="alert(1)
+
+
+
+
+How to check for xss on any website?
+1)Spider/crawl all the url
+
+2)Filter urls having parameter and send that url to repeater
+
+3)Check if your input is reflecting or not in repeater tab
+
+4)If it's reflecting send that request to intruder tab and there inject any JS code there either manually or by using xss payloads file. Then start attack
+
+5)First it will try with 0 payload check its length, any other payload length greater than of 0th payload it may be vulnerable to xss.
+
+6)show responce in browser and copy that url in browser, turn off intercept. 
+
+
+
+
+

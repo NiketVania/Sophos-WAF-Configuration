@@ -1,0 +1,22 @@
+1)website
+
+2)subdomains
+	find it from "virustotal.com"
+
+3)sort subdomains by unpopularity
+
+4)ip address of website
+	find it using "ping domainname"
+
+5)which programing language they are using
+	find it using "whatweb domainname"
+	check X-Powered-By field 
+
+6)open ports & services
+	find it using "nmap ipaddress" 
+		aggresive scan "nmap ipaddr -sV"
+		detailed info about target "nmap ipaddr | nmap -sC ipaddr"
+
+7)server information	      
+	use whatweb as above
+	
